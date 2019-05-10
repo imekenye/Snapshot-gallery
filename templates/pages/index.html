@@ -1,5 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Home</h1>
+   <section class="search-section mt-3 container d-flex my-2 justify-content-between">
+      <div class="w-75 ">
+        <input
+          id="searchBar"
+          class="searchbar"
+          type="text"
+          placeholder="Search Category"
+        />
+        <a id="btnSearch" class="btn-search"
+          ><i class="fa fa-search text-white"></i
+        ></a>
+      </div>
+      <div class="drop align-items-center justify-content-end">
+        <div class="dropdown">
+          <ul id="my-dropdown2">
+            <li><a href="#">Nairobi</a></li>
+            <li><a href="#">Kisumu</a></li>
+            <li><a href="https://twitter.com/hashtag/covfefe">Mombasa</a></li>
+          </ul>
+          <a
+            href="#my-dropdown2"
+            aria-controls="my-dropdown2"
+            role="button"
+            data-toggle="dropdown"
+            id="my-dropdown2-btn"
+          >
+            Location
+          </a>
+          <a
+            href="#my-dropdown2-btn"
+            aria-controls="my-dropdown2"
+            role="button"
+            data-toggle="dropdown"
+            class="close"
+          >
+          </a>
+        </div>
+      </div>
+    </section>
 {% endblock %}
