@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #1b1b1b;
+}
+
+.grid-layout {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense;
+  padding: 10px;
+}
+
+.grid-item {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #929796;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+.grid-item:nth-child(odd) {
+  background-color: #424242;
+}
+
+.span-2 {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.span-3 {
+  -ms-grid-column-span: 3;
+      grid-column-end: span 3;
+  -ms-grid-row-span: 4;
+      grid-row-end: span 4;
+}
+
+.span-4 {
+  -ms-grid-column-span: 2;
+      grid-column-end: span 2;
+  -ms-grid-row-span: 2;
+      grid-row-end: span 2;
+}
+
+.grid-item {
+  padding: 0;
+  margin: 0;
+  border-radius: 2%;
+}
+
+.grid-item img {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.search-section {
+  width: 100%;
+  border-radius: 0.25em;
+}
+
+.search-section form input {
+  width: 80%;
+  border: 1px solid #333;
+  border-radius: 10px;
+  border-bottom: 1px solid #333;
+}
+
+nav a .navbar-brand {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.searchbar {
+  color: #333;
+  padding: 6px 10px;
+  width: 200px;
+  margin-top: 1px;
+  font-size: 1em;
+  border: #333 solid 1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.searchbar::-webkit-input-placeholder {
+  color: #333;
+  font-size: 0.8em;
+  /* transition: 0.2s; */
+}
+
+.searchbar:-ms-input-placeholder {
+  color: #333;
+  font-size: 0.8em;
+  /* transition: 0.2s; */
+}
+
+.searchbar::-ms-input-placeholder {
+  color: #333;
+  font-size: 0.8em;
+  /* transition: 0.2s; */
+}
+
+.searchbar::placeholder {
+  color: #333;
+  font-size: 0.8em;
+  /* transition: 0.2s; */
+}
+
+.searchbar:focus {
+  width: 18em;
+  font-size: 1em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Stops the input box from inheriting the styling from the inputs on the request form */
+  border-bottom: #333 solid 1px;
+  outline: none;
+}
+
+.btn-search {
+  cursor: pointer;
+  background-color: #333;
+  text-decoration: none !important;
+  font-size: 1em;
+  padding: 0.52em;
+}
+
+.contacts {
+  background: #333;
+  height: 100%;
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+
+.dropdown > label,
+.dropdown > a[role="button"] {
+  display: inline-block;
+  padding: 6px 15px;
+  color: #333;
+  line-height: 1.5em;
+  text-decoration: none;
+  border: 1px solid #8c8c8c;
+  cursor: pointer;
+}
+
+.dropdown > label:hover,
+.dropdown > a[role="button"]:hover,
+.dropdown > a[role="button"]:focus {
+  border-color: #333;
+}
+
+.dropdown > label:after,
+.dropdown > a[role="button"]:after {
+  content: "\f0d7";
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.dropdown > ul {
+  position: absolute;
+  z-index: 999;
+  display: block;
+  left: -100vw;
+  top: calc(1.5em + 14px);
+  border: 1px solid #8c8c8c;
+  background: #fff;
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown > ul a {
+  display: block;
+  padding: 6px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown > ul a:hover,
+.dropdown > ul a:focus {
+  background: #ececec;
+}
+
+.dropdown > input[type="checkbox"]:checked ~ ul,
+.dropdown > ul:target {
+  left: 0;
+}
+
+.dropdown > [type="checkbox"]:checked + label:after,
+.dropdown > ul:target ~ a:after {
+  content: "\f0d8";
+}
+
+.dropdown a.close {
+  display: none;
+}
+
+.dropdown > ul:target ~ a.close {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-indent: -100vw;
+  z-index: 1000;
+}
+/*# sourceMappingURL=main.css.map */
