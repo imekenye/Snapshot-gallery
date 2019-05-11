@@ -40,4 +40,34 @@
         </div>
       </div>
     </section>
+    <section class="grid-layout container">
+        {% if images %}
+            {% for image in images %}
+
+                <div class="grid-item">
+                    <img
+                      src="{{ image.image_path.url }}"
+                      alt=""
+                      height="100%"
+                      width="100%"
+                    />
+                </div>
+                <div class="grid-item span-2">
+                    <img
+                      src="{{ image.image_path.url }}"
+                      alt=""
+                      height="100%"
+                      width="100%"
+                    />
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+            <div class="col-md-12">
+                <p>No images</p>
+            </div>
+        {% endif %}
+
+    </section>
 {% endblock %}
