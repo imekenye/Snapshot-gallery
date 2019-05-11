@@ -12,9 +12,9 @@ body {
 .grid-layout {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 10px;
-    grid-auto-rows: minmax(180px, auto);
+    grid-auto-rows: minmax(200px, auto);
     grid-auto-flow: dense;
     padding: 10px;
 }
@@ -60,8 +60,8 @@ body {
 }
 
 .grid-item img {
-    -o-object-fit: fill;
-    object-fit: fill;
+
+    object-fit: cover;
 }
 
 .search-section {
