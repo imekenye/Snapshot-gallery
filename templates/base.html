@@ -1,11 +1,11 @@
-{% load static %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+
     <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,24 +24,42 @@
             integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH"
             crossorigin="anonymous"
     ></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+          integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
             rel="stylesheet"
     />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
     <title>Snapshot</title>
 </head>
 <body>
-    <section>
-        <nav class="navbar navbar-dark bg-dark justify-content-center">
-            <a class="navbar-brand text-white"
-            ><i class="fas fa-camera mr-2"></i>Snapshot</a
-            >
-        </nav>
-    </section>
+<section>
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <a class="navbar-brand text-white"
+        ><i class="fas fa-camera mr-2"></i>Snapshot</a
+        >
+    </nav>
+</section>
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
+<script>
+    $(function(){
+
+        $('.pic').click(function () {
+
+            $(this).toggleClass('active');
+
+            $('.backdrop').toggleClass('underlay');
+
+        });
+    })
+</script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/mauGallery.min.js' %}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
