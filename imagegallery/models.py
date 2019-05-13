@@ -2,10 +2,11 @@ from django.db import models
 
 
 class Location(models.Model):
-    location = models.CharField(max_length=30)
+    locat = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.location
+        return self.locat
+
 
     def save_location(self):
         self.save()
@@ -44,7 +45,7 @@ class Image(models.Model):
 
     @classmethod
     def filter_location(cls, location):  # filter images by the location.
-        filter_imagelocation = cls.objects.filter(image_location__location__icontains=location)
+        filter_imagelocation = cls.objects.filter(image_location__locat__icontains=location)
         return filter_imagelocation
 
     @classmethod

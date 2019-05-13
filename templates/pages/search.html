@@ -44,17 +44,19 @@
       </div>
     </section>
     <div class="backbtn container"><a href="{% url 'index' %}" class="nav-link"><i class="fas fa-arrow-left mr-2"></i>Go back</a></div>
-    <section class="grid-layout container" id="image-container">
+   <section class="grid-layout container" id="image-container">
         {% if images %}
             {% for image in images %}
 
-            <div class="grid-item ">
+            <div class="grid-itemmain">
+                <a class="grid-item " href="{{ image.image_path.url }}" data-fancybox="images"  data-caption="<h3 class='text-bold'>{{image.name}}</h3>  <p> {{image.description}}</p>   <h6> LOCATION: {{image.image_location}} </h6> <button class='butt mt-4'>Get Link</button> ">
                     <img
                       src="{{ image.image_path.url }}"
                       alt=""
                       height="100%"
                       width="100%"
                     />
+                </a>
 
 {#                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">#}
 {#                    View#}
