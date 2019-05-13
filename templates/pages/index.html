@@ -3,22 +3,26 @@
 {% block content %}
    <section class="search-section mt-3 container d-flex my-2 justify-content-between">
       <div class="w-75 ">
-        <input
-          id="searchBar"
-          class="searchbar"
-          type="text"
-          placeholder="Search Category"
-        />
-        <a id="btnSearch" class="btn-search"
-          ><i class="fa fa-search text-white"></i
-        ></a>
+          <form class="" role="search" action="{% url 'search_results' %}">
+
+            <input
+              id="searchBar"
+              class=""
+              type="text"
+              placeholder="Search Category"
+              name="category"
+            />
+            <button id="btnSearch" class="btn-search" type="submit"
+              ><i class="fa fa-search text-white"></i
+            ></button>
+          </form>
       </div>
       <div class="drop align-items-center justify-content-end">
         <div class="dropdown">
-          <ul id="my-dropdown2">
-            <li><a href="#">Nairobi</a></li>
-            <li><a href="#">Kisumu</a></li>
-            <li><a href="https://twitter.com/hashtag/covfefe">Mombasa</a></li>
+          <ul id="">
+              {% for loc in location %}
+            <li><a href="{% url 'specific_location' loc.location %}">{{ loc.location }}</a></li>
+              {% endfor %}
           </ul>
           <a
             href="#my-dropdown2"
@@ -40,26 +44,51 @@
         </div>
       </div>
     </section>
-    <section class="grid-layout container">
+    <section class="grid-layout container" id="image-container">
         {% if images %}
             {% for image in images %}
 
-                <div class="grid-item">
+            <div class="grid-item ">
                     <img
                       src="{{ image.image_path.url }}"
                       alt=""
                       height="100%"
                       width="100%"
                     />
-                </div>
-                <div class="grid-item span-2">
-                    <img
-                      src="{{ image.image_path.url }}"
-                      alt=""
-                      height="100%"
-                      width="100%"
-                    />
-                </div>
+
+{#                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">#}
+{#                    View#}
+{#                </button>#}
+{#                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">#}
+{#                  <div class="modal-dialog modal-dialog-centered" role="document">#}
+{#                    <div class="modal-content">#}
+{#                      <div class="modal-header">#}
+{#                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>#}
+{#                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+{#                          <span aria-hidden="true">&times;</span>#}
+{#                        </button>#}
+{#                      </div>#}
+{#                      <div class="modal-body">#}
+{#                        ...#}
+{#                      </div>#}
+{#                      <div class="modal-footer">#}
+{#                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+{#                        <button type="button" class="btn btn-primary">Save changes</button>#}
+{#                      </div>#}
+{#                    </div>#}
+{#                  </div>#}
+{#                </div>#}
+            </div>
+
+
+{#                <div class="grid-item span-2">#}
+{#                    <img#}
+{#                      src="{{ image.image_path.url }}"#}
+{#                      alt=""#}
+{#                      height="100%"#}
+{#                      width="100%"#}
+{#                    />#}
+{#                </div>#}
 
             {% endfor %}
 
