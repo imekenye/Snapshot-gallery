@@ -1,1 +1,8 @@
-$(".dropdown-toggle").dropdown();
+$('.pic').click(function () {
+
+    $(this).toggleClass('active');
+
+    $('.backdrop').toggleClass('underlay');
+
+});
+
