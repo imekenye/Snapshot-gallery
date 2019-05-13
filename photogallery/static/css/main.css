@@ -6,7 +6,7 @@
 
 body {
     font-family: sans-serif;
-    background-color: #1b1b1b;
+    /*background-color: #1b1b1b;*/
 }
 
 .grid-layout {
@@ -26,6 +26,23 @@ body {
     color: #929796;
     background-color: #333;
     border-radius: 5px;
+    position: relative;
+}
+
+.grid-item a {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    color: #fff;
+    transform: translate(-25%, -25%);
+}
+
+.grid-item a:hover {
+
+    color: #fff;
+    transform: translate(-25%, -25%);
+    border: 1px solid #fff;
+
 }
 
 .grid-item:nth-child(odd) {
@@ -57,11 +74,24 @@ body {
     padding: 0;
     margin: 0;
     border-radius: 2%;
+    overflow: hidden;
 }
 
 .grid-item img {
 
     object-fit: cover;
+    transition: .5s;
+    position: relative;
+    filter: grayscale(100%);
+}
+
+.grid-item img:hover {
+
+
+    transform: scale(2);
+    cursor: pointer;
+    filter: grayscale(0%);
+
 }
 
 .search-section {
@@ -230,4 +260,26 @@ nav a .navbar-brand {
     z-index: 1000;
 }
 
+/*modal*/
+
+.modal, body.modal-open {
+    padding-right: 0 !important
+}
+
+body.modal-open {
+    overflow: auto
+}
+
+body.scrollable {
+    overflow-y: auto
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-start;
+
+.btn {
+    position: absolute;
+    right: 10px;
+}
 /*# sourceMappingURL=main.css.map */
